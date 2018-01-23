@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/estilos.css">
+    <link rel="stylesheet" href="CSS/formulariomodal.css">
+    <title>StarWars</title>
+</head>
+
+<body>
+
+    <!-- intro -->
+    <div id="introduccion" class="star-wars-intro">
+       
+        <p class="intro-text">
+            Hace poco tiempo, en una clase muy chunga...
+        </p>
+
+        <!-- Logo Image or Text goes in here -->
+        <h2 class="main-logo">
+            <img src="Sprites/Logo/starwars-logo.png">
+        </h2>
+
+        <!-- All Scrolling Content Goes in here -->
+        <div class="main-content">
+
+            <div class="title-content">
+                <p class="content-header">Episodio 6<br/>Un infierno <strike>bonito</strike> horrible</p>
+                <br>
+                <p class="content-body">
+                    Octavio necesitaba mucha droga pal body y aguantar a los juankers.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Fin intro -->
+
+    <!--Botones para logearse -->
+    <div id="botonesLogin">
+        <button id="btnLogin">Login</button>
+        <button id="btnRegistro">Registrarse</button>
+        <button id="btnStartGame"></button>
+    </div>
+
+    <!-- Ventana Modal Login-->
+    <div id="modalLogin" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Modal Headerd</h2>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the Modal Body</p>
+                <p>Some other text...</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Ventana Modal Registro -->
+    <div id="modalRegistro" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Modal Headerd</h2>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the Modal Body</p>
+                <p>Some other text...</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="JS/jquery-3.2.1.min.js"></script>
+    <script src="JS/phaser.min.js"></script>
+    <script src="JS/intro.js"></script>
+
+</body>
+
+</html>
