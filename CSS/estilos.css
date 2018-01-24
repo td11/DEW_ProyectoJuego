@@ -22,6 +22,11 @@ html {
     position: relative;
 }
 
+.star-wars-intro p.intro-disclaimer{
+    width: 20%;
+    float: left;
+}
+
 .star-wars-intro p.intro-text {
     position: relative;
     max-width: 16em;
