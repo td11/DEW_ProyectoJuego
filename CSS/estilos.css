@@ -22,10 +22,7 @@ html {
     position: relative;
 }
 
-.star-wars-intro p.intro-disclaimer{
-    width: 20%;
-    float: left;
-}
+
 
 .star-wars-intro p.intro-text {
     position: relative;
@@ -298,7 +295,7 @@ html {
     font-family: "Droid Sans", arial, verdana, sans-serif;  
 }
 
-#btnLogin{
+#btnLogin,#login_btn {
     background-color:transparent;
     border: none;
     color: white;
@@ -311,13 +308,13 @@ html {
     border: 5px solid #EBD71C;
 }
 
-#btnLogin:hover{
+#btnLogin:hover,#login_btn:hover{
     background-color: #D2BE03;
     border-color: #D2BE03;
     color: black;
 }
 
-#btnRegistro{
+#btnRegistro,#rgstr_btn{
     background-color:transparent;
     border: none;
     color: white;
@@ -330,8 +327,36 @@ html {
     border: 5px solid #EBD71C;
 }
 
-#btnRegistro:hover{
+#btnRegistro:hover,#rgstr_btn:hover{
     background-color: #D2BE03;
     border-color: #D2BE03;
     color: black;
+}
+
+/* Formularios y ventana modal modificacion */
+
+form{
+    margin: 1%
+}
+
+.modal{
+    background: url("../Sprites/Logo/stars.png") center center;
+    color: #EBD71C;
+    background-color: #000;
+    font-family: "Droid Sans", arial, verdana, sans-serif;
+    font-weight: 700;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background: url("../Sprites/Logo/stars.png") center center;
+}
+
+p.intro-disclaimer{
+    width: 70%;
+    float: left;
+    overflow: hidden;
+    position: relative;
 }
