@@ -1,28 +1,29 @@
 // Name and Password from the register-form
-var nombre = document.getElementById('userName');
-var password = document.getElementById('userPassword');
+var nombre = document.getElementById('userRegistroNombre');
+var password = document.getElementById('userRegistroPassword');
 
 // storing input from register-form
 function store() {
-    localStorage.setItem('name', name.value);
-    localStorage.setItem('pw', pw.value);
+    localStorage.setItem('name', nombre.value);
+    localStorage.setItem('pw', password.value);
 }
 
-// check if stored data from register-form is equal to entered data in the   login-form
+// Comprobar el login con los datos cogidos del formulario registro guardados en local storage
 function check() {
 
-    // stored data from the register-form
+    // Comprobar datos guardados del formulario registro
     var storedName = localStorage.getItem('name');
     var storedPw = localStorage.getItem('pw');
 
     // entered data from the login-form
     var userName = document.getElementById('userName');
-    var userPw = document.getElementById('userPw');
+    var userPw = document.getElementById('userPassword');
 
     // check if stored data from register-form is equal to data from login form
     if(userName.value !== storedName || userPw.value !== storedPw) {
-        alert('ERROR');
+        alert('Error nombre de usuario o contraseña incorrecta volvemos al inicio.');
     }else {
-        alert('You are loged in.');
+        alert('Bienvenido '+storedName);
     }
+    
 }
