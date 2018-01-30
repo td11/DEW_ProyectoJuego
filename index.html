@@ -11,29 +11,27 @@
 
 <body>
 
-    <!-- intro -->
+    <!-- intro 
     <div id="introduccion" class="star-wars-intro">
            
         <p class="intro-text">
-            Hace poco tiempo, en una situación muy chunga...
+            Hace mucho tiempo, en una batcueva muy molona...
         </p>
         
         
-        <!-- Logo Image or Text goes in here -->
         <h2 class="main-logo">
             <img src="Sprites/Logo/starwars-logo.png">
         </h2>
 
-        <!-- Texto Scroll -->
         <div class="main-content">
 
             <div class="title-content">
-                <p class="content-header">Episodio 6<br/>Un infierno <strike>bonito</strike> horrible</p>
+                <p class="content-header">Episodio 6<br/>La venganza del Tito Vader</p>
                 <br>
                 <p class="content-body">
-                    NenyYEAHFOREVER no lo aguanta mas Pepe el botella el tirano de los papeles no deja que
-                    nuestra heroína consiga los papeles del castillo junto a IvanSerruchoSolo, están a un paso
-                    de ir contra el imperio del botella.
+                    Tio Vader no para de hacer el tonto con el juego pero tampoco para de pasarselo bien haciendolo.<br>
+                    ¿Conseguirá terminarlo a tiempo antes del domingo y conseguir un aprobado frente a la alianza chunga rebelde?<br>
+                    Tendremos una gran hazaña de las de antes seguro hay que confiar en Tito Vader<br>
                 </p>
             </div>
 
@@ -41,13 +39,20 @@
 
     </div>
     <!-- Fin intro -->
+    
+    <!-- elegir personaje -->
+    <!--<div id="elegirpersonaje" class="panelseleccion"></div>
+    <!-- fin personaje -->
+    
+    <!-- Marcador -->
+    <!-- fin marcador -->
 
     <!--Botones para logearse -->
-    <div id="botonesLogin">
+    <!--<div id="botonesLogin">
         <button id="btnLogin">Login</button>
         <button id="btnRegistro">Registrarse</button>
-        <button id="btnStartGame"></button>
-    </div>
+        <button id="btnStartGame">Empezar</button>
+    </div> -->
 
     <!-- Ventana Modal Login-->
     <div id="modalLogin" class="modal">
@@ -65,7 +70,7 @@
                     <label>Contraseña</label><br>
                     <input id="userPassword" type="password" placeholder="Enter Password" value=""/>
                     <br><br>
-                    <input id="login_btn" type="submit" value="Login" onClick="check()"/> 
+                    <input id="login_btn" type="button" value="Login" onClick="check()"/> 
                 </form>
                 <p class="intro-disclaimer">
                     Disclaimer
@@ -97,7 +102,7 @@
                     <label>Contraseña</label><br>
                     <input id="userRegistroPassword" type="password" value=""/>
                     <br><br>
-                    <input id="rgstr_btn" type="submit" value="Registrate" onClick="store()"/> 
+                    <input id="rgstr_btn" type="button" value="Registrate" onClick="store()"/> 
                 </form>
                 
                 <p class="intro-disclaimer">
@@ -114,12 +119,15 @@
 
     </div>
 
+    <!-- Audio -->
+    <audio id="my_audio" src="Music/intro.mp3"></audio>
 
     <!-- Scripts -->
     <script src="JS/jquery-3.2.1.min.js"></script>
     <script src="JS/phaser.min.js"></script>
-    <script src="JS/intro.js"></script>
+    <!--<script src="JS/intro.js"></script> -->
     <script src="JS/login.js"></script>
+    <script src="JS/juego.js"></script>
 
 </body>
 

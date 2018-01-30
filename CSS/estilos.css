@@ -295,7 +295,7 @@ html {
     font-family: "Droid Sans", arial, verdana, sans-serif;  
 }
 
-#btnLogin,#login_btn {
+#btnLogin,#login_btn,#btnStartGame {
     background-color:transparent;
     border: none;
     color: white;
@@ -308,7 +308,7 @@ html {
     border: 5px solid #EBD71C;
 }
 
-#btnLogin:hover,#login_btn:hover{
+#btnLogin:hover,#login_btn:hover,#btnStartGame:hover{
     background-color: #D2BE03;
     border-color: #D2BE03;
     color: black;
@@ -359,4 +359,9 @@ p.intro-disclaimer{
     float: left;
     overflow: hidden;
     position: relative;
+}
+
+.paneljuego{
+    width: 100%;
+    margin: 0 auto;
 }

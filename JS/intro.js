@@ -9,9 +9,12 @@ var span = $(".close");
 
 $(function () {
 
-    $("#btnStartGame").hide();
+    //$("#my_audio").get(0).play();
+    $('#botonesLogin #btnStartGame').hide();
     $("#modalLogin").hide();
     $("#modalRegistro").hide();
+    $('#juego').hide();
+    $('#elegirpersonaje').hide();
 
     // Eventos para los botones de registro y login
     $("#btnLogin").click(function (event) {

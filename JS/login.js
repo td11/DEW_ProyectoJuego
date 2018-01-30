@@ -4,6 +4,7 @@ var password = document.getElementById('userRegistroPassword');
 
 // storing input from register-form
 function store() {
+    alert('Se ha registrado correctamente');
     localStorage.setItem('name', nombre.value);
     localStorage.setItem('pw', password.value);
 }
@@ -23,7 +24,17 @@ function check() {
     if(userName.value !== storedName || userPw.value !== storedPw) {
         alert('Error nombre de usuario o contraseña incorrecta volvemos al inicio.');
     }else {
+        modalLogin.hide();
+        $('#introduccion').addClass("star-wars-intro");
         alert('Bienvenido '+storedName);
+        mostrarBotonStart();
     }
     
 }
+
+function mostrarBotonStart(){
+    $('#botonesLogin #btnStartGame').show();
+    $('#botonesLogin #btnRegistro').hide();
+    $('#botonesLogin #btnLogin').hide();
+}
+
