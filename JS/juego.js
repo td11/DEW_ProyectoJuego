@@ -6,6 +6,11 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, '', {
 });
 var platforms;
 var player;
+var cursors;
+var hitButton;
+var vg;
+var jumpTimer;
+var ground;
 
 $(function () {
 
@@ -52,7 +57,7 @@ function comprobarEstado() {
 function preload() {
     game.load.image('fondo', 'Sprites/Mapas/background.jpg');
     game.load.image('ground', 'Sprites/Mapas/ground.png');
-    game.load.spritesheet('luke', 'Sprites/Personajes/Luke/MovimientoNormal.png', 43, 79);
+    game.load.spritesheet('luke', 'Sprites/Personajes/Luke/LosMovimientos2.png', 73, 70);
 
 }
 
@@ -60,58 +65,36 @@ function create() {
 
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.add.sprite(0, 0, 'fondo');
-    //fondo.scale.setTo(0.05,0.05)
-    platforms = game.add.group();
-    platforms.enableBody = true;
-    //platforms.body.static = true;
+    game.physics.arcade.gravity.y = 200;
+    
 
-    var ground = platforms.create(0, game.world.height - 60, 'ground');
-
-    ground.scale.setTo(10, 10);
-
-    //  Enable if for physics. This creates a default rectangular body.
-    //game.physics.p2.enable([ground]);
-
-    //  Make static
-    ground.body.static = true;
-
-/*    var ledge = platforms.create(400, 400, 'ground');
-
-    ledge.body.inmovable = true;
-
-    ledge = platforms.create(-150, 250, 'ground');
-
-    ledge.body.inmovable = true;
-    ledge.body.static = true; */
-
-
+    //Sprites
+    ground = game.add.tileSprite(0, 650, this.game.width, 550, 'ground');
     // The player and its settings
-    player = game.add.sprite(42, game.world.height - 140, 'luke');
+    player = game.add.sprite(10, game.world.height - 600, 'luke');
 
-    //  We need to enable physics on the player
-    game.physics.arcade.enable(player);
-
-    //  Player physics properties. Give the little guy a slight bounce.
-    player.body.bounce.y = 10;
-    player.body.gravity.y = 0;
+    //Fisicas
+    game.physics.arcade.enable([player, ground]);
+    ground.body.immovable = true;
+    ground.body.allowGravity = false;
     player.body.collideWorldBounds = true;
+    
 
     //  Our two animations, walking left and right.
-    player.animations.add('left', [4, 5, 6, 7], 17, true);
-    player.animations.add('right', [9, 10, 11, 12], 17, true);
-    player.animations.add('quieto', [8], 17, true);
+    player.animations.add('left', [28,29,30], 5, true);
+    player.animations.add('right', [17,18,19], 5, true);
+    player.animations.add('quieto', [0], 5, true);
+    player.animations.add('jump', [65], 5, true);
+    cursors = game.input.keyboard.createCursorKeys();
+    
 
 }
 
 function update() {
 
-    //  Collide the player and the stars with the platforms
-    var hitPlatform = game.physics.arcade.collide(player, platforms);
-    
-    var cursors = game.input.keyboard.createCursorKeys();
-
-
+    game.debug.body(player,"#9090ff", false);
     //  Reset the players velocity (movement)
+    game.physics.arcade.collide(player, ground);
     player.body.velocity.x = 0;
 
     if (cursors.left.isDown) {
@@ -119,19 +102,21 @@ function update() {
         player.body.velocity.x = -150;
 
         player.animations.play('left');
+        
     } else if (cursors.right.isDown) {
         //  Move to the right
         player.body.velocity.x = 150;
 
         player.animations.play('right');
+    }else if(cursors.up.isDown && player.body.touching.down ){
+        
+        player.body.velocity.y = -250;
+        player.animations.play('jump');
+             
     } else {
         //  Stand still
         player.animations.play('quieto');
     }
 
-    //  Allow the player to jump if they are touching the ground.
-    if (cursors.up.isDown && player.body.touching.down && hitPlatform) {
-        player.body.velocity.y = -350;
-    }
 
 }
