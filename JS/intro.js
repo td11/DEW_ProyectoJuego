@@ -9,7 +9,7 @@ var span = $(".close");
 
 $(function () {
 
-    //$("#my_audio").get(0).play();
+    $("#my_audio").get(0).play();
     $('#botonesLogin #btnStartGame').hide();
     $("#modalLogin").hide();
     $("#modalRegistro").hide();
@@ -20,13 +20,23 @@ $(function () {
     $("#btnLogin").click(function (event) {
         modalLogin.show();
         $('#introduccion').removeClass("star-wars-intro");
-
     });
 
     $("#btnRegistro").click(function (event) {
         modalRegistro.show();
         $('#introduccion').removeClass("star-wars-intro");
     });
+
+    $("#btnStartGame").click(function (event) {
+        $('#botonesLogin').hide();
+        $('#introduccion').hide();
+        $('<script>')
+            .attr('src', 'JS/juego.js')
+            .appendTo('body');
+        $("#my_audio").get(0).stop();
+
+    });
+
 
     // When the user clicks on <span> (x), close the modal
     $(".close").click(function () {
