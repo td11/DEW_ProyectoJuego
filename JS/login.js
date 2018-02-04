@@ -2,14 +2,20 @@
 var nombre = document.getElementById('userRegistroNombre');
 var password = document.getElementById('userRegistroPassword');
 
-// storing input from register-form
+/**
+ * Guardamos en local storage
+ */
+
 function store() {
     alert('Se ha registrado correctamente');
     localStorage.setItem('name', nombre.value);
     localStorage.setItem('pw', password.value);
 }
 
-// Comprobar el login con los datos cogidos del formulario registro guardados en local storage
+/**
+ * Comprobamos el login con los datos supuestamente registrados
+ */
+
 function check() {
 
     // Comprobar datos guardados del formulario registro
@@ -31,6 +37,10 @@ function check() {
     }
     
 }
+
+/**
+ * Mostramos el boton de empezar el juego
+ */
 
 function mostrarBotonStart(){
     $('#botonesLogin #btnStartGame').show();

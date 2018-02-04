@@ -6,7 +6,9 @@ var btnLogin = $("#btnLogin");
 var btnRegistro = $('#btnRegistro');
 var span = $(".close");
 
-
+/**
+ * Inicio de la intro
+ */
 $(function () {
 
     $("#my_audio").get(0).play();

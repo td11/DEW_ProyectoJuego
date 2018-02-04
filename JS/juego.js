@@ -31,6 +31,10 @@ var enemy1, enemy1Walk = true,
     enemy1Punch = false,
     enemy1Alive, enemy1Count = 1;
 
+/**
+ * principal que inicia el juego
+ * 
+ */
 
 $(function () {
 
@@ -51,6 +55,11 @@ $(function () {
 
 
 });
+
+
+/**
+ * Hace responsive el juego
+ */
 
 function resizeGame() {
     game.scale.setGameSize($(window).width(), $(window).height());
@@ -74,7 +83,11 @@ function comprobarEstado() {
 /* Funciones para el panel de juego */
 
 
-/* Precargamos los sprites que usaremos */
+
+/**
+ * Precargamos los sprites que usaremos 
+ */
+
 function preload() {
     game.load.image('fondo', 'Sprites/Mapas/background.jpg');
     game.load.image('ground', 'Sprites/Mapas/ground.png');
@@ -83,6 +96,10 @@ function preload() {
     // revisar para fisicas game.load.physics("fisicasluke", "Sprites/Personajes/Luke/fisicasluke.json");
 
 }
+
+/**
+ * Creamos los objetos correspondientes
+ */
 
 function create() {
 
@@ -185,6 +202,9 @@ function Enemy1Fire() {
 
 
 
+/**
+ * Generar soldados hay que revisar
+ */
 
 function createSoldados() {
 
@@ -201,6 +221,10 @@ function createSoldados() {
     soldado.y = 0;
 
 }
+
+/**
+ * Se mantiene en escucha mientras el juego avanza
+ */
 
 function update() {
     
@@ -229,6 +253,10 @@ function update() {
 
 
 }
+
+/**
+ * Cuando el jugador golpea al enemigo
+ */
 
 function playerHitsEnemy() {
 
@@ -291,6 +319,10 @@ function resetBullet(bullet) {
 
 }
 
+/**
+ * Reinicia el juego
+ */
+
 function restart() {
 
     lives.callAll('revive');
@@ -304,6 +336,9 @@ function restart() {
 }
 
 
+/**
+ * Los movimientos del jugador
+ */
 
 function movimientosJugador() {
 
