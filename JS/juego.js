@@ -243,6 +243,7 @@ function playerHitsEnemy() {
             fill: '#fff'
         });
         this.game.state.restart();
+        alert('hasta aqui la alpha del juego');
     }
 
 }
