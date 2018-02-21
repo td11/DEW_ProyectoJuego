@@ -11,10 +11,11 @@ var span = $(".close");
  */
 $(function () {
 
-    $("#my_audio").get(0).play();
+    //$("#my_audio").get(0).play();
     $('#botonesLogin #btnStartGame').hide();
     $("#modalLogin").hide();
     $("#modalRegistro").hide();
+    $('#modalMarcador').hide();
     $('#juego').hide();
     $('#elegirpersonaje').hide();
 

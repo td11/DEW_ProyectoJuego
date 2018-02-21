@@ -274,3 +274,10 @@ function movimientosJugador() {
         player.animations.play('quieto');
     }
 }
+
+/**
+* Grabar puntuacion
+*/
+function guardarPuntuacion(){
+    var storedName = localStorage.getItem('name');
+}
