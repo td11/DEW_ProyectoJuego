@@ -311,6 +311,11 @@ function guardarPuntuacion() {
 /* Mostrar puntuacion */
 function actualizarMarcador() {
     var contenedorListado = $('#puntuacion');
+    /* var monkeyList = new List('marcador', {
+        valueNames: ['usuario'],
+        page: 3,
+        pagination: true
+    }); */
     for (var i = 0; i < puntuaciones.length; i++) {
         var nombre = puntuaciones[i]['nombre'];
         var puntuacion = puntuaciones[i]['puntuacion'];

@@ -2,26 +2,54 @@
 var nombre = document.getElementById('userRegistroNombre');
 var password = document.getElementById('userRegistroPassword');
 var user = {
-    nombre: nombre,
-    password: password,
+    nombre: '',
+    password: '',
     puntuacion: 0
 };
-var nombreRecogido,passwordRecogida;
+var nombreRecogido, passwordRecogida, registroDuplicado = false,
+    userCheck;
 
 /**
- * Guardamos en local storage
+ * Guardamos en local storage el usuario registrado
  */
-
 function store() {
-    alert('Se ha registrado correctamente');
+    //alert('Se ha registrado correctamente');
     let sizeStorage = localStorage.length;
-    user["nombre"] = nombre.value;
+    user["nombre"] = $.trim(nombre.value);
     user["password"] = password.value;
-    if (sizeStorage == 0)
+    comprobarDuplicadoRegistro();
+    if (sizeStorage == 0 && registroDuplicado == false) {
+        alert('Se ha registrado correctamente');
         localStorage.setItem('user' + 0, JSON.stringify(user));
-    else
+    } else if (registroDuplicado == false) {
+        alert('Se ha registrado correctamente');
         localStorage.setItem('user' + sizeStorage, JSON.stringify(user));
+    }
 
+}
+
+/* Recoger valores del campo registro y validarlos */
+function validarCamposRegistro() {
+    var nombreValidar = $.trim(nombre.value);
+    if (nombreValidar == null || nombreValidar == '') {
+        alert('Error: no pueden existir campos vacíos ni con espacios');
+    } else {
+        store();
+    }
+}
+
+/* Comprobar registro */
+function comprobarDuplicadoRegistro() {
+    for (var i = 0; i < localStorage.length; i++) {
+        userCheck = JSON.parse(localStorage.getItem('user' + i));
+        if (userCheck['nombre'] == user['nombre']) {
+            registroDuplicado = true;
+            alert('Ya existe un usuario con ese nombre.');
+            break;
+        } else {
+            registroDuplicado = false;
+        }
+    }
 }
 
 /**
@@ -30,7 +58,7 @@ function store() {
 
 function check() {
 
-    var userCheck, checkError=true;
+    var checkError = true;
     // Datos recogidos del usuario
     nombreRecogido = document.getElementById('userName');
     passwordRecogida = document.getElementById('userPassword');
