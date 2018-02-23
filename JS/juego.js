@@ -206,6 +206,7 @@ function playerHitsEnemy() {
     //&& enemy1.x >= 415 && enemy1Walk == true && enemy1Alive == true
     if (golpesNecesarios == 0) {
         destruir();
+        alert('Has terminado! pulsa el boton del marcador para saber tu puesto y el de reiniciar para volver al menu!');
     } else {
         golpesNecesarios = golpesNecesarios - 1;
     }
