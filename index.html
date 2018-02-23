@@ -13,12 +13,12 @@
 
     <!-- intro -->
     <div id="introduccion" class="star-wars-intro">
-           
+
         <p class="intro-text">
             Hace mucho tiempo, en una galaxia muy muy lejana....
         </p>
-        
-        
+
+
         <h2 class="main-logo">
             <img src="Sprites/Logo/starwars-logo.png">
         </h2>
@@ -29,12 +29,8 @@
                 <p class="content-header">Episodio 6<br/>El retorno del jedi</p>
                 <br>
                 <p class="content-body">
-                    Luke Skywalker ha regresado a Tatooine, su planeta de origen, para intentar rescatar a su amigo Han Solo de las garras <br>
-                    del malvado Jabba, el Hutt.
-                    <br><br>
-                    Pero Luke ignora que el IMPERIO GALÁCTICO ha comenzado en secreto la construcción de una nueva estación espacial armada, más poderosa que la temida Estrella de la Muerte.<br>
-                    
-                    Una vez terminada, este arma suprema significará la                    aniquilación del pequeño grupo de rebeldes que lucha para restaurar la libertad en la galaxia....
+                    Luke Skywalker ha regresado a Tatooine, su planeta de origen, para intentar rescatar a su amigo Han Solo de las garras <br> del malvado Jabba, el Hutt.
+                    <br><br> Pero Luke ignora que el IMPERIO GALÁCTICO ha comenzado en secreto la construcción de una nueva estación espacial armada, más poderosa que la temida Estrella de la Muerte.<br> Una vez terminada, este arma suprema significará la aniquilación del pequeño grupo de rebeldes que lucha para restaurar la libertad en la galaxia....
                 </p>
             </div>
 
@@ -47,6 +43,10 @@
     <!--<div id="elegirpersonaje" class="panelseleccion"></div>
     <!-- fin personaje -->
 
+    <!-- Juego -->
+    <div id="juego"></div>
+    <!-- fin de juego -->
+
     <!-- Marcador -->
     <!-- fin marcador -->
 
@@ -55,6 +55,8 @@
         <button id="btnLogin">Login</button>
         <button id="btnRegistro">Registrarse</button>
         <button id="btnStartGame">Empezar</button>
+        <button id="btnReiniciar">Reiniciar</button>
+        <button id="btnMarcador">Marcador</button>
     </div>
 
     <!-- Ventana Modal Login-->
@@ -72,6 +74,16 @@
                     <input id="userName" type="text" placeholder="Enter Username" value="" /><br><br>
                     <label>Contraseña</label><br>
                     <input id="userPassword" type="password" placeholder="Enter Password" value="" />
+                    <br><br>
+                    <label>Elige una dificultad*</label>
+                    <input type="radio" name="dificultad" id="facil" value="1" />
+                    <label for="dificultad">Facil</label>
+
+                    <input type="radio" name="dificultad" id="medio" value="2" />
+                    <label for="dificultad">Medio</label>
+
+                    <input type="radio" name="dificultad" id="dificil" value="3" />
+                    <label for="dificultad">Dificil</label>
                     <br><br>
                     <input id="login_btn" type="button" value="Login" onClick="check()" />
                 </form>
@@ -117,7 +129,7 @@
         </div>
 
     </div>
-    
+
     <div id="modalMarcador" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
@@ -127,11 +139,12 @@
             </div>
             <div class="modal-body">
                 <div id="marcador">
+                    <p style="margin:0 auto;margin-left: 54px;">Usuario | Puntuacion</p>
                     <ul id="puntuacion">
-                        
+
                     </ul>
                 </div>
-                
+
             </div>
             <div class="modal-footer">
                 <h3>Teodoro Sergio Reveron Afonso</h3>

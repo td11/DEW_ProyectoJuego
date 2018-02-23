@@ -6,10 +6,7 @@ var user = {
     password: password,
     puntuacion: 0
 };
-
-
-
-
+var nombreRecogido,passwordRecogida;
 
 /**
  * Guardamos en local storage
@@ -35,27 +32,28 @@ function check() {
 
     var userCheck, checkError=true;
     // Datos recogidos del usuario
-    var userName = document.getElementById('userName');
-    var userPw = document.getElementById('userPassword');
+    nombreRecogido = document.getElementById('userName');
+    passwordRecogida = document.getElementById('userPassword');
 
 
     for (var i = 0; i < localStorage.length; i++) {
         userCheck = JSON.parse(localStorage.getItem('user' + i));
         // check if stored data from register-form is equal to data from login form
-        if (userName.value !== userCheck["nombre"] || userPw.value !== userCheck["password"]) {
+        if (nombreRecogido.value !== userCheck["nombre"] || passwordRecogida.value !== userCheck["password"]) {
             checkError = true;
         } else {
             checkError = false;
             modalLogin.hide();
             $('#introduccion').addClass("star-wars-intro");
             mostrarBotonStart();
+            break;
         }
     }
 
     if (checkError == true)
         alert('Error nombre de usuario o contraseña incorrecta volvemos al inicio.');
     else
-        alert('Bienvenido ' + userName.value);
+        alert('Bienvenido ' + nombreRecogido.value);
 
 
 }
